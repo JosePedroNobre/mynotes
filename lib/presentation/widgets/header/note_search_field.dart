@@ -26,7 +26,7 @@ class NoteSearchFieldState extends State<NoteSearchField> {
 
   void _clearSearch() {
     _searchController.clear();
-    context.read<NotesCubit>().updateSearchQuery(''); // Show all notes when search is cleared
+    context.read<NotesCubit>().updateSearchQuery('');
   }
 
   @override

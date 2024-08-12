@@ -3,14 +3,14 @@ class NoteModel {
   final String title;
   final String content;
   final DateTime createdAt;
-  final List<String> tags; // New field for tags
+  final List<String> tags;
 
   NoteModel({
     required this.id,
     required this.title,
     required this.content,
     required this.createdAt,
-    this.tags = const [], // Initialize with an empty list if no tags
+    this.tags = const [],
   });
 
   NoteModel copyWith({
@@ -18,7 +18,7 @@ class NoteModel {
     String? title,
     String? content,
     DateTime? createdAt,
-    List<String>? tags, // Add tags to the copyWith method
+    List<String>? tags,
   }) {
     return NoteModel(
       id: id ?? this.id,
