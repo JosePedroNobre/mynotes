@@ -30,7 +30,6 @@ class NoteRepositoryImpl implements NoteRepository {
 
   @override
   Future<List<NoteModel>> getNotes({String searchQuery = '', List<String> selectedTags = const []}) {
-    // TODO: implement getNotes
     throw UnimplementedError();
   }
 }

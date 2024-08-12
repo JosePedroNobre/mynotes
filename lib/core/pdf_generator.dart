@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mynotes/domain/models/note_model.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:pdf/pdf.dart';
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 
 Future<void> saveNoteAsPdf(BuildContext context, NoteModel note) async {
