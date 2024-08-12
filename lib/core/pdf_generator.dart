@@ -37,7 +37,7 @@ Future<void> saveNoteAsPdf(BuildContext context, NoteModel note) async {
   final pdfBytes = await pdf.save();
   final base64Pdf = base64Encode(pdfBytes);
 
-  final anchor = html.AnchorElement(href: 'data:application/pdf;base64,$base64Pdf')
+  html.AnchorElement(href: 'data:application/pdf;base64,$base64Pdf')
     ..setAttribute('download', '${note.title}.pdf')
     ..click();
 }
