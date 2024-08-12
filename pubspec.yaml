@@ -16,7 +16,6 @@ dependencies:
   image_picker: ^1.0.2  # For picking images from the gallery or camera
   pdf: ^3.11.0  # For generating PDF files
   path_provider: ^2.0.15  # For accessing the file system paths
-  share_plus: ^6.3.0  # For sharing files like PDFs
 
 dev_dependencies:
   flutter_test:

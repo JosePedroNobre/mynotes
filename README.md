@@ -1,16 +1,26 @@
-# mynotes
+# Notes Application
 
-A new Flutter project.
+## Overview
 
-## Getting Started
+This project is a Flutter-based Notes Application that includes features for searching, sorting, and filtering notes, as well as tagging and grouping notes. Additionally, it supports saving notes as PDF files and integrates with a simple REST backend for persistent storage alongside a mocked database.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- **Search Notes**: Allows users to search notes by title or content.
+- **Sort Notes**: Provides options to sort notes in the list view.
+- **Filter Notes**: Enables filtering of notes based on tags.
+- **Save Note as PDF**: Users can save individual notes as PDF files.
+- **Tagging or Grouping**: Notes can be tagged or grouped for better organization.
+- **Backend Integration**: Includes a simple REST backend to store notes in an external source alongside a mocked database.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Running the Tests
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Unit Tests
+
+To run the unit tests for the project, follow these steps:
+
+1. **Open Terminal**: Navigate to the root directory of your Flutter project.
+
+2. **Run Unit Tests**: Use the following command to execute the unit tests:
+   ```bash
+   flutter test

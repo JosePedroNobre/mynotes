@@ -26,7 +26,7 @@ class NoteHeader extends StatelessWidget {
             TextButton(
               onPressed: () => saveNoteAsPdf(context, note),
               child: Text(
-                'Export',
+                'Export to PDF',
                 style: TextStyle(color: Colors.teal[800], fontWeight: FontWeight.bold),
               ),
             ),
