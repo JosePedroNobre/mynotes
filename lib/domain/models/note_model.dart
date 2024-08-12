@@ -35,7 +35,7 @@ class NoteModel {
       title: json['title'],
       content: json['content'],
       createdAt: DateTime.parse(json['createdAt']),
-      tags: List<String>.from(json['tags'] ?? []), // Deserialize tags
+      tags: List<String>.from(json['tags'] ?? []),
     );
   }
 
@@ -45,7 +45,7 @@ class NoteModel {
       'title': title,
       'content': content,
       'createdAt': createdAt.toIso8601String(),
-      'tags': tags, // Serialize tags
+      'tags': tags,
     };
   }
 }
