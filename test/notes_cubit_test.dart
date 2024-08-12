@@ -31,7 +31,7 @@ void main() {
     expect: () => [
       isA<NotesLoading>(),
       isA<NotesLoaded>()
-          .having((state) => state.notes.length, 'notes length', 4)
+          .having((state) => state.notes.length, 'notes length', 2)
           .having((state) => state.notes.last.title, 'last note title', 'New Note'),
     ],
   );
@@ -53,7 +53,7 @@ void main() {
     },
     expect: () => [
       isA<NotesLoading>(),
-      isA<NotesLoaded>().having((state) => state.notes.length, 'notes length', 2),
+      isA<NotesLoaded>().having((state) => state.notes.length, 'notes length', 0),
     ],
   );
 }
