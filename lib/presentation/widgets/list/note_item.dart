@@ -32,8 +32,8 @@ class NoteItem extends StatelessWidget {
                   spacing: 6.0,
                   children: note.tags.map((tag) {
                     return Chip(
-                      label: Text(tag),
-                      backgroundColor: Colors.tealAccent,
+                      label: Text(tag, style: const TextStyle(color: Colors.white)),
+                      backgroundColor: Colors.teal,
                     );
                   }).toList(),
                 ),

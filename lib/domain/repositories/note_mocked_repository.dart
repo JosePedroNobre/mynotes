@@ -1,15 +1,24 @@
 import 'dart:async';
 import 'package:mynotes/core/id_generator.dart';
+import 'package:mynotes/core/tags_generator.dart';
 import 'package:mynotes/domain/models/note_model.dart';
 import 'package:mynotes/domain/repositories/note_repository.dart';
-
-enum NoteTags { important, personal, ideas, work }
 
 class MockNoteRepository implements NoteRepository {
   final List<NoteModel> _notes = [];
   final durationOfApiCall = 200;
 
-  MockNoteRepository();
+  MockNoteRepository() {
+    _notes.addAll([
+      NoteModel(
+        id: generateUniqueId(),
+        title: "First Note",
+        content: "First Note Content.",
+        tags: [tagGenerator[0]],
+        createdAt: DateTime.now().subtract(const Duration(days: 2)),
+      ),
+    ]);
+  }
 
   @override
   Future<List<NoteModel>> getNotes({

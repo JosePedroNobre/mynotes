@@ -12,7 +12,7 @@ void main() {
 
   test('should return all notes', () async {
     final notes = await mockNoteRepository.getNotes();
-    expect(notes.length, 3);
+    expect(notes.length, 1); // repository starts with 1 note by default
   });
 
   test('should create a new note', () async {
@@ -25,7 +25,7 @@ void main() {
 
     await mockNoteRepository.createNote(newNote);
     final notes = await mockNoteRepository.getNotes();
-    expect(notes.length, 4);
+    expect(notes.length, 2); // repository starts with 1 note by default
     expect(notes.last.title, 'New Note');
   });
 
@@ -33,12 +33,12 @@ void main() {
     final note = await mockNoteRepository.getNotes().then((notes) => notes.first);
     await mockNoteRepository.deleteNote(note.id);
     final notes = await mockNoteRepository.getNotes();
-    expect(notes.length, 2);
+    expect(notes.length, 0); // repository starts with 1 note by default, removing we will have 0 notes
   });
 
   test('should return all notes when no filters are applied', () async {
     final notes = await mockNoteRepository.getNotes();
-    expect(notes.length, 3);
+    expect(notes.length, 1);
   });
 
   test('should filter notes by search query', () async {

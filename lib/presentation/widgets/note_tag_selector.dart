@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mynotes/core/tags_generator.dart';
 
 class NoteTagSelector extends StatefulWidget {
   final List<String> initialSelectedTags;
@@ -25,8 +26,6 @@ class NoteTagSelectorState extends State<NoteTagSelector> {
 
   @override
   Widget build(BuildContext context) {
-    final tags = ["Work", "Personal", "Important", "Ideas"];
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -41,7 +40,7 @@ class NoteTagSelectorState extends State<NoteTagSelector> {
         const SizedBox(height: 8.0),
         Wrap(
           spacing: 8.0,
-          children: tags.map((tag) {
+          children: tagGenerator.map((tag) {
             return ChoiceChip(
               label: Text(tag),
               selected: _selectedTags.contains(tag),
