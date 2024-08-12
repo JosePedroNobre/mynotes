@@ -3,32 +3,13 @@ import 'package:mynotes/core/id_generator.dart';
 import 'package:mynotes/domain/models/note_model.dart';
 import 'package:mynotes/domain/repositories/note_repository.dart';
 
+enum NoteTags { important, personal, ideas, work }
+
 class MockNoteRepository implements NoteRepository {
   final List<NoteModel> _notes = [];
   final durationOfApiCall = 200;
 
-  MockNoteRepository() {
-    _notes.addAll([
-      NoteModel(
-        id: generateUniqueId(),
-        title: "First Note",
-        content: "First Note Content.",
-        createdAt: DateTime.now().subtract(const Duration(days: 2)),
-      ),
-      NoteModel(
-        id: generateUniqueId(),
-        title: "Second Note",
-        content: "Second Note Content.",
-        createdAt: DateTime.now().subtract(const Duration(days: 1)),
-      ),
-      NoteModel(
-        id: generateUniqueId(),
-        title: "Third Note",
-        content: "Third Note Content.",
-        createdAt: DateTime.now(),
-      ),
-    ]);
-  }
+  MockNoteRepository();
 
   @override
   Future<List<NoteModel>> getNotes({

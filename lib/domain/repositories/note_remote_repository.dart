@@ -2,10 +2,10 @@ import 'package:mynotes/domain/models/note_model.dart';
 import 'package:mynotes/domain/repositories/note_repository.dart';
 import 'package:mynotes/network/api_service.dart';
 
-class NoteRepositoryImpl implements NoteRepository {
+class NoteRemoteRepository implements NoteRepository {
   final ApiService noteApi;
 
-  NoteRepositoryImpl(this.noteApi);
+  NoteRemoteRepository(this.noteApi);
 
   @override
   Future<NoteModel> getNoteById(String id) async {

@@ -8,17 +8,16 @@ class NotesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: const EdgeInsets.all(8.0),
-      itemCount: notes.length,
-      itemBuilder: (context, index) {
-        final note = notes[index];
-        if (notes.isEmpty) {
-          return _buildEmptyState();
-        }
-        return NoteItem(note: note);
-      },
-    );
+    return notes.isEmpty
+        ? _buildEmptyState()
+        : ListView.builder(
+            padding: const EdgeInsets.all(8.0),
+            itemCount: notes.length,
+            itemBuilder: (context, index) {
+              final note = notes[index];
+              return NoteItem(note: note);
+            },
+          );
   }
 
   Widget _buildEmptyState() {
