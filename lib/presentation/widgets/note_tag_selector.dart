@@ -55,7 +55,7 @@ class NoteTagSelectorState extends State<NoteTagSelector> {
                 });
                 widget.onTagsChanged(_selectedTags);
               },
-              selectedColor: Colors.tealAccent,
+              selectedColor: Colors.teal,
               backgroundColor: Colors.grey[200],
             );
           }).toList(),
