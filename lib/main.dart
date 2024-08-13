@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider<NotesCubit>(
           create: (context) => NotesCubit(
-              MockNoteRepository()), // mocked is by default. The code for the remote connection is in the project in the network package. Couldn't do the hosting due to pricing and limits on free tier.
+              MockNoteRepository()), // mocked repository is by default. The code for the remote connection is in the project in the network package. Couldn't do the hosting due to pricing and limits on free tier.
         ),
       ],
       child: MaterialApp(
