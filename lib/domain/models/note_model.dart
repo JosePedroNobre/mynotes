@@ -1,3 +1,5 @@
+import 'package:mynotes/core/encryption_generator.dart';
+
 class NoteModel {
   final String id;
   final String title;
@@ -25,7 +27,7 @@ class NoteModel {
       title: title ?? this.title,
       content: content ?? this.content,
       createdAt: createdAt ?? this.createdAt,
-      tags: tags ?? this.tags, // Preserve existing tags if not provided
+      tags: tags ?? this.tags,
     );
   }
 
@@ -47,5 +49,17 @@ class NoteModel {
       'createdAt': createdAt.toIso8601String(),
       'tags': tags,
     };
+  }
+
+  NoteModel encryptContent(EncryptionGenerator helper) {
+    return copyWith(
+      content: helper.encryptText(this.content),
+    );
+  }
+
+  NoteModel decryptContent(EncryptionGenerator helper) {
+    return copyWith(
+      content: helper.decryptText(this.content),
+    );
   }
 }

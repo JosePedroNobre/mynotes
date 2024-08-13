@@ -14,7 +14,7 @@ class NoteHeader extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         const Text(
-          "Edit Note",
+          "Note Details",
           style: TextStyle(
             color: Colors.teal,
             fontSize: 24,

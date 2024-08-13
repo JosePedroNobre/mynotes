@@ -48,7 +48,6 @@ void main() {
 
       // Verify notes after deletion
       final updatedNotes = await mockNoteRepository.getNotes();
-      // Make sure the length of notes is as expected
       expect(updatedNotes.length, notes.length - 1);
     },
     expect: () => [
