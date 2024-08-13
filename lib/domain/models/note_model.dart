@@ -53,13 +53,13 @@ class NoteModel {
 
   NoteModel encryptContent(EncryptionGenerator helper) {
     return copyWith(
-      content: helper.encryptText(this.content),
+      content: helper.encryptText(content),
     );
   }
 
   NoteModel decryptContent(EncryptionGenerator helper) {
     return copyWith(
-      content: helper.decryptText(this.content),
+      content: helper.decryptText(content),
     );
   }
 }

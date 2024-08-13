@@ -7,9 +7,8 @@ class EncryptionGenerator {
 
   EncryptionGenerator(String keyString)
       : key = encrypt.Key.fromUtf8(keyString),
-        iv = encrypt.IV.fromLength(16), // IV must be consistent
-        encrypter = encrypt.Encrypter(encrypt.AES(encrypt.Key.fromUtf8(keyString),
-            mode: encrypt.AESMode.cbc)); // Ensure mode and padding are consistent
+        iv = encrypt.IV.fromLength(16),
+        encrypter = encrypt.Encrypter(encrypt.AES(encrypt.Key.fromUtf8(keyString), mode: encrypt.AESMode.cbc));
 
   String encryptText(String plainText) {
     final encrypted = encrypter.encrypt(plainText, iv: iv);
