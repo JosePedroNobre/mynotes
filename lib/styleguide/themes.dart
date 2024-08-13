@@ -8,7 +8,6 @@ ThemeData get customTheme {
     textTheme: _defaultTextTheme,
     primaryColor: Colors.teal,
     scaffoldBackgroundColor: Colors.white,
-    appBarTheme: _customAppBarTheme,
     colorScheme: const ColorScheme.light(
       primary: Colors.teal,
       secondary: Colors.lightBlueAccent,
@@ -50,22 +49,6 @@ TextTheme get _defaultTextTheme {
     ),
     labelSmall: TextStyle(
       fontSize: 8,
-    ),
-  );
-}
-
-//app bar styles
-AppBarTheme get _customAppBarTheme {
-  return const AppBarTheme(
-    backgroundColor: Colors.teal,
-    elevation: 0,
-    titleTextStyle: TextStyle(
-      fontSize: 20,
-      fontWeight: FontWeight.bold,
-      color: Colors.white,
-    ),
-    iconTheme: IconThemeData(
-      color: Colors.white,
     ),
   );
 }
