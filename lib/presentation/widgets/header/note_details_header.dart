@@ -13,10 +13,10 @@ class NoteHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
+        const Text(
           "Edit Note",
           style: TextStyle(
-            color: Colors.teal[800],
+            color: Colors.teal,
             fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
@@ -27,7 +27,7 @@ class NoteHeader extends StatelessWidget {
               onPressed: () => saveNoteAsPdf(context, note),
               child: Text(
                 'Export to PDF',
-                style: TextStyle(color: Colors.teal[800], fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.teal, fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(width: 8),
@@ -38,7 +38,10 @@ class NoteHeader extends StatelessWidget {
               },
               child: Text(
                 'Delete',
-                style: TextStyle(color: Colors.red[800], fontWeight: FontWeight.bold),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall
+                    ?.copyWith(color: Colors.red[800], fontWeight: FontWeight.bold),
               ),
             ),
           ],

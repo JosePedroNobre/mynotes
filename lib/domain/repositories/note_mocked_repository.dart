@@ -12,8 +12,8 @@ class MockNoteRepository implements NoteRepository {
     _notes.addAll([
       NoteModel(
         id: generateUniqueId(),
-        title: "First Note",
-        content: "First Note Content.",
+        title: "This is a title example",
+        content: "This is a description example",
         tags: [tagGenerator[0]],
         createdAt: DateTime.now().subtract(const Duration(days: 2)),
       ),

@@ -68,9 +68,17 @@ class HomeScreenState extends State<HomeScreen> {
           } else if (state is NotesLoaded) {
             return NotesList(notes: state.notes);
           } else if (state is NotesError) {
-            return Center(child: Text(state.message));
+            return Center(
+                child: Text(
+              state.message,
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.black),
+            ));
           } else {
-            return const Center(child: Text('No notes available.'));
+            return Center(
+                child: Text(
+              'No notes available.',
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.black),
+            ));
           }
         },
       ),

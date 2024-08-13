@@ -17,14 +17,17 @@ class NoteItem extends StatelessWidget {
         contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         title: Text(
           note.title,
-          style: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Text(
+              note.content,
+              maxLines: 2,
+              style: Theme.of(context).textTheme.bodyMedium,
+              overflow: TextOverflow.ellipsis,
+            ),
             if (note.tags.isNotEmpty)
               Padding(
                 padding: const EdgeInsets.only(top: 8.0),
@@ -32,18 +35,12 @@ class NoteItem extends StatelessWidget {
                   spacing: 6.0,
                   children: note.tags.map((tag) {
                     return Chip(
-                      label: Text(tag, style: const TextStyle(color: Colors.white)),
+                      label: Text(tag, style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.white)),
                       backgroundColor: Colors.teal,
                     );
                   }).toList(),
                 ),
               ),
-            if (note.tags.isNotEmpty) const SizedBox(height: 8.0),
-            Text(
-              note.content,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
           ],
         ),
         onTap: () => _showNoteDetailBottomSheet(context, note),

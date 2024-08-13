@@ -27,13 +27,10 @@ class AddNoteWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
+            Text(
               'Add Note',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.teal,
-              ),
+              style:
+                  Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold, color: Colors.teal),
             ),
             const SizedBox(height: 16.0),
             TextFormField(
@@ -87,16 +84,10 @@ class AddNoteWidget extends StatelessWidget {
                   Navigator.pop(context);
                 }
               },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.teal,
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-              ),
-              child: const Text(
+              style: Theme.of(context).elevatedButtonTheme.style,
+              child: Text(
                 'Add Note',
-                style: TextStyle(fontSize: 18, color: Colors.white),
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.white),
               ),
             ),
           ],

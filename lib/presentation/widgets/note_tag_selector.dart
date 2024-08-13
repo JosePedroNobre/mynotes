@@ -31,18 +31,17 @@ class NoteTagSelectorState extends State<NoteTagSelector> {
       children: [
         Text(
           "Tags",
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-            color: Colors.teal[800],
-          ),
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.teal, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 8.0),
         Wrap(
           spacing: 8.0,
           children: tagGenerator.map((tag) {
             return ChoiceChip(
-              label: Text(tag),
+              label: Text(
+                tag,
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.black),
+              ),
               selected: _selectedTags.contains(tag),
               onSelected: (selected) {
                 setState(() {

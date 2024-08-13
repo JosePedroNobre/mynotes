@@ -27,11 +27,10 @@ class NoteDetailsContentWidget extends StatelessWidget {
           children: [
             TextField(
               controller: titleController,
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.teal[800],
-              ),
+              style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.teal[800],
+                  ),
               decoration: const InputDecoration(
                 hintText: 'Title',
                 border: OutlineInputBorder(),
@@ -41,11 +40,10 @@ class NoteDetailsContentWidget extends StatelessWidget {
             TextField(
               controller: contentController,
               maxLines: null,
-              style: TextStyle(
-                fontSize: 18,
-                height: 1.5,
-                color: Colors.grey[800],
-              ),
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    height: 1.5,
+                    color: Colors.grey[800],
+                  ),
               decoration: const InputDecoration(
                 hintText: 'Content',
                 border: OutlineInputBorder(),
@@ -59,28 +57,20 @@ class NoteDetailsContentWidget extends StatelessWidget {
               },
             ),
             const SizedBox(height: 20),
-            Center(
-              child: TextButton(
-                onPressed: () {
-                  final updatedNote = note.copyWith(
-                    title: titleController.text,
-                    content: contentController.text,
-                    tags: selectedTags,
-                  );
-                  context.read<NotesCubit>().updateNote(updatedNote);
-                  Navigator.pop(context);
-                },
-                style: TextButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    side: BorderSide(color: Colors.teal[800]!),
-                  ),
-                ),
-                child: Text(
-                  'Save',
-                  style: TextStyle(color: Colors.teal[800], fontWeight: FontWeight.bold),
-                ),
+            TextButton(
+              onPressed: () {
+                final updatedNote = note.copyWith(
+                  title: titleController.text,
+                  content: contentController.text,
+                  tags: selectedTags,
+                );
+                context.read<NotesCubit>().updateNote(updatedNote);
+                Navigator.pop(context);
+              },
+              style: Theme.of(context).elevatedButtonTheme.style,
+              child: Text(
+                'Save',
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.white),
               ),
             ),
           ],

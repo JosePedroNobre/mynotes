@@ -9,7 +9,7 @@ class NotesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return notes.isEmpty
-        ? _buildEmptyState()
+        ? _buildEmptyState(context)
         : ListView.builder(
             padding: const EdgeInsets.all(8.0),
             itemCount: notes.length,
@@ -20,12 +20,12 @@ class NotesList extends StatelessWidget {
           );
   }
 
-  Widget _buildEmptyState() {
-    return const Center(
+  Widget _buildEmptyState(BuildContext context) {
+    return Center(
       child: Text(
         'No notes yet!\nTap the + button to add your first note.',
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 18, color: Colors.grey),
+        style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.grey),
       ),
     );
   }

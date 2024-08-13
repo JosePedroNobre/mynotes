@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mynotes/domain/repositories/note_mocked_repository.dart';
 import 'package:mynotes/presentation/cubit/notes_cubit.dart';
 import 'package:mynotes/presentation/home_screen.dart';
+import 'package:mynotes/styleguide/themes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,10 +24,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Notes App',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
+        theme: customTheme,
         home: const HomeScreen(),
       ),
     );

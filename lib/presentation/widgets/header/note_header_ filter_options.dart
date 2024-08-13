@@ -13,9 +13,9 @@ class NoteHeaderFilterOptions extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             'Filter Notes',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.grey, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 10),
           NoteTagSelector(
