@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:mynotes/core/id_generator.dart';
-import 'package:mynotes/core/tags_generator.dart';
 import 'package:mynotes/domain/models/note_model.dart';
 import 'package:mynotes/domain/repositories/note_repository.dart';
 

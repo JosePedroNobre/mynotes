@@ -11,6 +11,7 @@ This project is a Flutter-based Notes Application that includes features for sea
 - **Filter Notes**: Enables filtering of notes based on tags.
 - **Save Note as PDF**: Users can save individual notes as PDF files.
 - **Tagging or Grouping**: Notes can be tagged or grouped for better organization.
+- **Encryption**: Notes can be encrypted, logic was done and can be tested under notes_encryption_test.dart
 - **Backend Integration**: Includes a simple REST backend to store notes in an external source alongside a mocked database.
 
 ## Running the Tests
