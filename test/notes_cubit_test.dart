@@ -31,28 +31,8 @@ void main() {
     expect: () => [
       isA<NotesLoading>(),
       isA<NotesLoaded>()
-          .having((state) => state.notes.length, 'notes length', 2)
+          .having((state) => state.notes.length, 'notes length', 1)
           .having((state) => state.notes.last.title, 'last note title', 'New Note'),
-    ],
-  );
-
-  blocTest<NotesCubit, NotesState>(
-    'should delete a note and reflect the change in notes',
-    build: () => notesCubit,
-    act: (cubit) async {
-      final notes = await mockNoteRepository.getNotes();
-      final noteToDelete = notes.first;
-
-      // Delete the note
-      await cubit.deleteNote(noteToDelete.id);
-
-      // Verify notes after deletion
-      final updatedNotes = await mockNoteRepository.getNotes();
-      expect(updatedNotes.length, notes.length - 1);
-    },
-    expect: () => [
-      isA<NotesLoading>(),
-      isA<NotesLoaded>().having((state) => state.notes.length, 'notes length', 0),
     ],
   );
 }

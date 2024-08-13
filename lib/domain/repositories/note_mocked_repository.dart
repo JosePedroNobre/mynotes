@@ -8,17 +8,7 @@ class MockNoteRepository implements NoteRepository {
   final List<NoteModel> _notes = [];
   final durationOfApiCall = 200;
 
-  MockNoteRepository() {
-    _notes.addAll([
-      NoteModel(
-        id: generateUniqueId(),
-        title: "This is a title example",
-        content: "This is a description example",
-        tags: [tagGenerator[0]],
-        createdAt: DateTime.now().subtract(const Duration(days: 2)),
-      ),
-    ]);
-  }
+  MockNoteRepository();
 
   @override
   Future<List<NoteModel>> getNotes({

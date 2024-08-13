@@ -12,7 +12,7 @@ void main() {
 
   test('should return all notes', () async {
     final notes = await mockNoteRepository.getNotes();
-    expect(notes.length, 1); // repository starts with 1 note by default
+    expect(notes.length, 0); // repository starts with 0 note by default
   });
 
   test('should create a new note', () async {
@@ -25,20 +25,28 @@ void main() {
 
     await mockNoteRepository.createNote(newNote);
     final notes = await mockNoteRepository.getNotes();
-    expect(notes.length, 2); // repository starts with 1 note by default
+    expect(notes.length, 1); // repository starts with 0 note by default
     expect(notes.last.title, 'New Note');
   });
 
-  test('should delete a note', () async {
+  test('should create and delete a note', () async {
+    final newNote = NoteModel(
+      id: '',
+      title: 'New Note',
+      content: 'This is a new note.',
+      createdAt: DateTime.now(),
+    );
+
+    await mockNoteRepository.createNote(newNote);
     final note = await mockNoteRepository.getNotes().then((notes) => notes.first);
     await mockNoteRepository.deleteNote(note.id);
     final notes = await mockNoteRepository.getNotes();
-    expect(notes.length, 0); // repository starts with 1 note by default, removing we will have 0 notes
+    expect(notes.length, 0); // repository starts with 0 note by default, we added and removed so we will have 0 notes
   });
 
   test('should return all notes when no filters are applied', () async {
     final notes = await mockNoteRepository.getNotes();
-    expect(notes.length, 1);
+    expect(notes.length, 0); // repository starts with 0 note by default
   });
 
   test('should filter notes by search query', () async {
